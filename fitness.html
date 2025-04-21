@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker - CareSuite</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">CareSuite</div>
+        <ul class="nav-links">
+            <li><a href="index.html" title="Home page">Home</a></li>
+            <li><a href="about.html" title="Learn about CareSuite">About</a></li>
+            <li><a href="mood.html" title="Track your daily mood">Mood Tracker</a></li>
+            <li><a href="journal.html" title="Write in your personal journal">Journal</a></li>
+            <li><a href="fitness.html" class="active" title="Track your fitness activities">Fitness</a></li>
+            <li><a href="contact.html" title="Contact our team">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Fitness Section -->
+    <main class="fitness-container">
+        <h1 class="page-header">Fitness Tracker</h1>
+
+        <div class="fitness-stats">
+            <div class="stat-card">
+                <i class="fas fa-walking"></i>
+                <h3>Steps Today</h3>
+                <p id="steps-count">0</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-fire"></i>
+                <h3>Calories Burned</h3>
+                <p id="calories-count">0</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-clock"></i>
+                <h3>Active Minutes</h3>
+                <p id="active-minutes">0</p>
+            </div>
+        </div>
+
+        <div class="workout-form">
+            <h2>Log Workout</h2>
+            <form id="workout-form" onsubmit="handleWorkoutSubmit(event)">
+                <div class="form-group">
+                    <label for="workout-type">Workout Type</label>
+                    <select id="workout-type" name="workout-type" required>
+                        <option value="">Select a workout type</option>
+                        <option value="running">Running</option>
+                        <option value="cycling">Cycling</option>
+                        <option value="swimming">Swimming</option>
+                        <option value="yoga">Yoga</option>
+                        <option value="strength">Strength Training</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="duration">Duration (minutes)</label>
+                    <input type="number" id="duration" name="duration" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="intensity">Intensity Level</label>
+                    <select id="intensity" name="intensity" required>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn" title="Log your workout">Log Workout</button>
+            </form>
+        </div>
+
+        <div class="workout-history">
+            <h2>Recent Workouts</h2>
+            <div id="workout-list">
+                <!-- Workout entries will be added here dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener" title="Visit our GitHub profile"><i class="fab fa-github"></i></a>
+                <a href="#" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Connect with us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2024 CareSuite. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        function handleWorkoutSubmit(event) {
+            event.preventDefault();
+            
+            const workoutType = document.getElementById('workout-type').value;
+            const duration = document.getElementById('duration').value;
+            const intensity = document.getElementById('intensity').value;
+
+            // Update stats (in a real app, this would be more sophisticated)
+            const steps = Math.floor(duration * 100);
+            const calories = Math.floor(duration * 5);
+            const activeMinutes = duration;
+
+            document.getElementById('steps-count').textContent = steps;
+            document.getElementById('calories-count').textContent = calories;
+            document.getElementById('active-minutes').textContent = activeMinutes;
+
+            // Add to workout history
+            const workoutList = document.getElementById('workout-list');
+            const workoutEntry = document.createElement('div');
+            workoutEntry.className = 'workout-entry';
+            workoutEntry.innerHTML = `
+                <h3>${workoutType.charAt(0).toUpperCase() + workoutType.slice(1)}</h3>
+                <p>Duration: ${duration} minutes</p>
+                <p>Intensity: ${intensity}</p>
+                <p>Time: ${new Date().toLocaleTimeString()}</p>
+            `;
+            workoutList.insertBefore(workoutEntry, workoutList.firstChild);
+
+            // Clear the form
+            event.target.reset();
+        }
+    </script>
+</body>
+</html> 

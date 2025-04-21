@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker - CareSuite</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">CareSuite</div>
+        <ul class="nav-links">
+            <li><a href="index.html" title="Home page">Home</a></li>
+            <li><a href="about.html" title="Learn about CareSuite">About</a></li>
+            <li><a href="mood.html" class="active" title="Track your daily mood">Mood Tracker</a></li>
+            <li><a href="journal.html" title="Write in your personal journal">Journal</a></li>
+            <li><a href="fitness.html" title="Track your fitness activities">Fitness</a></li>
+            <li><a href="contact.html" title="Contact our team">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Mood Tracker Section -->
+    <main class="mood-container">
+        <h1 class="page-header">Mood Tracker</h1>
+
+        <div class="mood-form">
+            <h2>How are you feeling today?</h2>
+            <div class="mood-options">
+                <div class="mood-option" data-mood="happy">
+                    <i class="fas fa-smile mood-emoji"></i>
+                    <span class="mood-label">Happy</span>
+                </div>
+                <div class="mood-option" data-mood="sad">
+                    <i class="fas fa-frown mood-emoji"></i>
+                    <span class="mood-label">Sad</span>
+                </div>
+                <div class="mood-option" data-mood="neutral">
+                    <i class="fas fa-meh mood-emoji"></i>
+                    <span class="mood-label">Neutral</span>
+                </div>
+                <div class="mood-option" data-mood="excited">
+                    <i class="fas fa-laugh mood-emoji"></i>
+                    <span class="mood-label">Excited</span>
+                </div>
+                <div class="mood-option" data-mood="anxious">
+                    <i class="fas fa-worried mood-emoji"></i>
+                    <span class="mood-label">Anxious</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mood-note">Add a note (optional)</label>
+                <textarea id="mood-note" name="mood-note" placeholder="How are you feeling?"></textarea>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="saveMood()" title="Save your current mood">Save Mood</button>
+        </div>
+
+        <div class="mood-history">
+            <h2>Mood History</h2>
+            <div id="mood-list">
+                <!-- Mood entries will be added here dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener" title="Visit our GitHub profile"><i class="fab fa-github"></i></a>
+                <a href="#" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Connect with us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2024 CareSuite. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        let selectedMood = null;
+
+        // Add click event listeners to mood options
+        document.querySelectorAll('.mood-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from all options
+                document.querySelectorAll('.mood-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                selectedMood = this.getAttribute('data-mood');
+            });
+        });
+
+        function saveMood() {
+            if (!selectedMood) {
+                alert('Please select a mood first');
+                return;
+            }
+
+            const note = document.getElementById('mood-note').value;
+            const moodList = document.getElementById('mood-list');
+            
+            const moodEntry = document.createElement('div');
+            moodEntry.className = 'mood-entry';
+            moodEntry.innerHTML = `
+                <div class="mood-entry-header">
+                    <i class="fas fa-${getMoodIcon(selectedMood)}"></i>
+                    <h3>${selectedMood.charAt(0).toUpperCase() + selectedMood.slice(1)}</h3>
+                    <span class="entry-date">${new Date().toLocaleDateString()}</span>
+                </div>
+                ${note ? `<p class="mood-note">${note}</p>` : ''}
+            `;
+            
+            moodList.insertBefore(moodEntry, moodList.firstChild);
+
+            // Reset form
+            document.querySelectorAll('.mood-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            selectedMood = null;
+            document.getElementById('mood-note').value = '';
+        }
+
+        function getMoodIcon(mood) {
+            const icons = {
+                'happy': 'smile',
+                'sad': 'frown',
+                'neutral': 'meh',
+                'excited': 'laugh',
+                'anxious': 'worried'
+            };
+            return icons[mood] || 'meh';
+        }
+    </script>
+</body>
+</html> 
