@@ -4,80 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CareSuite - Your Wellness Companion</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modern.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">CareSuite</div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active" title="Home page">Home</a></li>
-            <li><a href="about.html" title="Learn about CareSuite">About</a></li>
-            <li><a href="mood.html" title="Track your daily mood">Mood Tracker</a></li>
-            <li><a href="journal.html" title="Write in your personal journal">Journal</a></li>
-            <li><a href="fitness.html" title="Track your fitness activities">Fitness</a></li>
-            <li><a href="contact.html" title="Contact our team">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="container navbar-container">
+            <div class="logo">CareSuite</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active" title="Home page">Home</a></li>
+                <li><a href="about.html" title="Learn about CareSuite">About</a></li>
+                <li><a href="mood.html" title="Track your daily mood">Mood Tracker</a></li>
+                <li><a href="journal.html" title="Write in your personal journal">Journal</a></li>
+                <li><a href="fitness.html" title="Track your fitness activities">Fitness</a></li>
+                <li><a href="contact.html" title="Contact our team">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Welcome to CareSuite</h1>
-            <p>Your comprehensive wellness companion for tracking mood, journaling, and fitness.</p>
-            <a href="#features" class="cta-button" title="View our features">Get Started</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to CareSuite</h1>
+                <p>Your comprehensive wellness companion for tracking mood, journaling, and fitness.</p>
+                <a href="#features" class="btn btn-primary cta-button" title="View our features">Get Started</a>
+            </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="features">
-        <h2>Our Features</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <i class="fas fa-brain"></i>
-                <h3>Mood Tracking</h3>
-                <p>Monitor your emotional well-being with our intuitive mood tracking system.</p>
-                <a href="mood.html" class="feature-link" title="Try our mood tracking feature">Try Mood Tracker</a>
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Features</h2>
+                <p>Discover the tools that will help you improve your mental and physical well-being</p>
             </div>
-            <div class="feature-card">
-                <i class="fas fa-book"></i>
-                <h3>Personal Journal</h3>
-                <p>Keep a digital journal to record your thoughts, feelings, and experiences.</p>
-                <a href="journal.html" class="feature-link" title="Start journaling your thoughts">Start Journaling</a>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Mood Tracking</h3>
+                    <p>Monitor your emotional well-being with our intuitive mood tracking system.</p>
+                    <a href="mood.html" class="btn btn-secondary" title="Try our mood tracking feature">Try Mood Tracker</a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Personal Journal</h3>
+                    <p>Keep a digital journal to record your thoughts, feelings, and experiences.</p>
+                    <a href="journal.html" class="btn btn-secondary" title="Start journaling your thoughts">Start Journaling</a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-running"></i>
+                    <h3>Fitness Tracking</h3>
+                    <p>Track your physical activities and maintain a healthy lifestyle.</p>
+                    <a href="fitness.html" class="btn btn-secondary" title="Track your fitness activities">Track Fitness</a>
+                </div>
             </div>
-            <div class="feature-card">
-                <i class="fas fa-running"></i>
-                <h3>Fitness Tracking</h3>
-                <p>Track your physical activities and maintain a healthy lifestyle.</p>
-                <a href="fitness.html" class="feature-link" title="Track your fitness activities">Track Fitness</a>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="section testimonial-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Users Say</h2>
+                <p>Hear from people who have improved their well-being with CareSuite</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">CareSuite has completely transformed how I track my mental health. The mood tracker is intuitive and the journal feature helps me reflect on my day.</p>
+                    <div class="testimonial-author">
+                        <img src="assets/images/user1.jpg" alt="Sarah Johnson">
+                        <div class="testimonial-author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Mental Health Advocate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">As someone who struggles with anxiety, having a dedicated space to track my mood and write in my journal has been incredibly helpful for my mental well-being.</p>
+                    <div class="testimonial-author">
+                        <img src="assets/images/user2.jpg" alt="Michael Chen">
+                        <div class="testimonial-author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The fitness tracking feature motivates me to stay active. I love seeing my progress over time and how it correlates with my mood improvements.</p>
+                    <div class="testimonial-author">
+                        <img src="assets/images/user3.jpg" alt="Emily Rodriguez">
+                        <div class="testimonial-author-info">
+                            <h4>Emily Rodriguez</h4>
+                            <p>Fitness Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Call to Action Section -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to Start Your Wellness Journey?</h2>
-            <p>Join thousands of users who are already improving their well-being with CareSuite.</p>
-            <a href="contact.html" class="cta-button" title="Contact our team">Contact Us</a>
+    <section class="section" style="background: linear-gradient(135deg, var(--gray-100) 0%, var(--secondary-color) 100%);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ready to Start Your Wellness Journey?</h2>
+                <p>Join thousands of users who are already improving their well-being with CareSuite.</p>
+                <a href="contact.html" class="btn btn-primary" title="Contact our team">Contact Us</a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener" title="Visit our GitHub profile"><i class="fab fa-github"></i></a>
-                <a href="#" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" title="Connect with us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">CareSuite</div>
+                <div class="social-links">
+                    <a href="https://github.com/yourusername" target="_blank" rel="noopener" title="Visit our GitHub profile"><i class="fab fa-github"></i></a>
+                    <a href="#" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Connect with us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p>&copy; 2024 CareSuite. All rights reserved.</p>
             </div>
-            <p>&copy; 2024 CareSuite. All rights reserved.</p>
         </div>
     </footer>
 
