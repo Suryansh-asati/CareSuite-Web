@@ -4,88 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - CareSuite</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sofia-theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">CareSuite</div>
-        <ul class="nav-links">
-            <li><a href="index.html" title="Home page">Home</a></li>
-            <li><a href="about.html" title="Learn about CareSuite">About</a></li>
-            <li><a href="mood.html" title="Track your daily mood">Mood Tracker</a></li>
-            <li><a href="journal.html" title="Write in your personal journal">Journal</a></li>
-            <li><a href="fitness.html" title="Track your fitness activities">Fitness</a></li>
-            <li><a href="contact.html" class="active" title="Contact our team">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">CareSuite</a>
+            <input type="checkbox" id="checkbox" title="Toggle navigation menu" aria-label="Toggle navigation menu">
+            <label for="checkbox" class="toggle" aria-hidden="true">
+                <div class="bars" id="bar1"></div>
+                <div class="bars" id="bar2"></div>
+                <div class="bars" id="bar3"></div>
+            </label>
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="about.html" class="navbar-link">About</a></li>
+                <li><a href="mood.html" class="navbar-link">Mood</a></li>
+                <li><a href="journal.html" class="navbar-link">Journal</a></li>
+                <li><a href="fitness.html" class="navbar-link">Fitness</a></li>
+                <li><a href="contact.html" class="navbar-link">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
     <!-- Contact Section -->
-    <main class="contact-container">
-        <h1 class="page-header">Contact Us</h1>
-
-        <div class="contact-form">
-            <form id="contact-form" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn" title="Send your message">Send Message</button>
-            </form>
+    <section class="hero contact-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Get in Touch</h1>
+                <p class="hero-subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="contact-info">
-            <p><i class="fas fa-envelope"></i> support@caresuite.com</p>
-            <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+    <section class="section contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required class="form-control" placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required class="form-control" placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required class="form-control" placeholder="How can we help?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required class="form-control" rows="5" placeholder="Your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Location</h3>
+                        <p>123 Wellness Street<br>Health District, CA 90210</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p><a href="mailto:contact@caresuite.com">contact@caresuite.com</a></p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                    </div>
+                    <div class="social-links">
+                        <h3>Follow Us</h3>
+                        <div class="social-icons">
+                            <a href="#" title="Follow us on Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" title="Like us on Facebook" class="social-icon"><i class="fab fa-facebook"></i></a>
+                            <a href="#" title="Follow us on Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" title="Connect on LinkedIn" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section map-section">
+        <div class="container">
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1!2d-73.98!3d40.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ1JzAwLjAiTiA3M8KwNTgnNDguMCJX!5e0!3m2!1sen!2sus!4v1234567890"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener" title="Visit our GitHub profile"><i class="fab fa-github"></i></a>
-                <a href="#" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" title="Connect with us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">CareSuite</div>
+                <div class="social-links">
+                    <a href="https://github.com/yourusername" target="_blank" rel="noopener" title="Visit our GitHub profile"><i class="fab fa-github"></i></a>
+                    <a href="#" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Connect with us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p>&copy; 2024 CareSuite. All rights reserved.</p>
             </div>
-            <p>&copy; 2024 CareSuite. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
-    <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            // In a real application, you would send this data to a server
-            // For this demo, we'll just show an alert
-            alert(`Thank you for your message, ${name}! We'll get back to you at ${email} soon.`);
-            
-            // Clear the form
-            event.target.reset();
-        }
-    </script>
+    <script src="js/animation.js"></script>
 </body>
 </html> 

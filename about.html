@@ -4,92 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - CareSuite</title>
-    <link rel="stylesheet" href="css/modern.css">
+    <link rel="stylesheet" href="css/sofia-theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container navbar-container">
-            <div class="logo">CareSuite</div>
-            <ul class="nav-links">
-                <li><a href="index.html" title="Home page">Home</a></li>
-                <li><a href="about.html" class="active" title="Learn about CareSuite">About</a></li>
-                <li><a href="mood.html" title="Track your daily mood">Mood Tracker</a></li>
-                <li><a href="journal.html" title="Write in your personal journal">Journal</a></li>
-                <li><a href="fitness.html" title="Track your fitness activities">Fitness</a></li>
-                <li><a href="contact.html" title="Contact our team">Contact</a></li>
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">CareSuite</a>
+            <input type="checkbox" id="checkbox" title="Toggle navigation menu" aria-label="Toggle navigation menu">
+            <label for="checkbox" class="toggle" aria-hidden="true">
+                <div class="bars" id="bar1"></div>
+                <div class="bars" id="bar2"></div>
+                <div class="bars" id="bar3"></div>
+            </label>
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="about.html" class="navbar-link">About</a></li>
+                <li><a href="mood.html" class="navbar-link">Mood</a></li>
+                <li><a href="journal.html" class="navbar-link">Journal</a></li>
+                <li><a href="fitness.html" class="navbar-link">Fitness</a></li>
+                <li><a href="contact.html" class="navbar-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
-    <!-- About Section -->
-    <main class="about-container">
+    <!-- Hero Section -->
+    <section class="hero about-hero">
         <div class="container">
-            <div class="section-title">
+            <div class="hero-content">
                 <h1>About CareSuite</h1>
-                <p>Learn more about our mission and the team behind CareSuite</p>
+                <p class="hero-subtitle">Empowering individuals to take control of their mental and physical well-being through innovative digital solutions.</p>
             </div>
+        </div>
+    </section>
 
-            <div class="about-section">
-                <h2>Our Mission</h2>
-                <p>CareSuite is dedicated to providing a comprehensive wellness platform that helps individuals track and improve their mental and physical health. We believe in making health management accessible, intuitive, and effective for everyone.</p>
-            </div>
-
-            <div class="section">
-                <div class="section-title">
-                    <h2>Key Features</h2>
-                    <p>Discover the tools that will help you improve your well-being</p>
-                </div>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <i class="fas fa-brain"></i>
-                        <h3>Mood Tracking</h3>
-                        <p>Monitor your emotional well-being with our intuitive mood tracking system.</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-book"></i>
-                        <h3>Personal Journal</h3>
-                        <p>Keep a digital journal to record your thoughts, feelings, and experiences.</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-running"></i>
-                        <h3>Fitness Tracking</h3>
-                        <p>Track your physical activities and maintain a healthy lifestyle.</p>
+    <!-- Mission Section -->
+    <section class="section">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-content">
+                    <h2>Our Mission</h2>
+                    <p>At CareSuite, we believe that everyone deserves access to tools that support their mental and physical health journey. Our mission is to provide an intuitive, comprehensive platform that helps individuals track, understand, and improve their overall well-being.</p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>10K+</h3>
+                            <p>Active Users</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>95%</h3>
+                            <p>User Satisfaction</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>24/7</h3>
+                            <p>Support</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="section">
-                <div class="section-title">
-                    <h2>Our Team</h2>
-                    <p>Meet the dedicated professionals behind CareSuite</p>
-                </div>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <img src="assets/images/team1.jpg" alt="John Doe">
-                        <h3>John Doe</h3>
-                        <p>Founder & CEO</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="assets/images/team2.jpg" alt="Jane Smith">
-                        <h3>Jane Smith</h3>
-                        <p>Lead Developer</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="assets/images/team3.jpg" alt="Mike Johnson">
-                        <h3>Mike Johnson</h3>
-                        <p>UX Designer</p>
-                    </div>
+                <div class="mission-image">
+                    <img src="assets/images/mission.jpg" alt="Team collaborating" loading="lazy">
                 </div>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section bg-soft">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Empathy</h3>
+                    <p>We put ourselves in our users' shoes to create solutions that truly matter.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Privacy</h3>
+                    <p>Your data security and privacy are our top priorities.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovation</h3>
+                    <p>We constantly evolve our platform to better serve your needs.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community</h3>
+                    <p>Building a supportive environment for everyone's wellness journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Team</h2>
+                <p>The passionate individuals behind CareSuite</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="assets/images/team1.jpg" alt="Sarah Johnson" loading="lazy">
+                    <h3>Sarah Johnson</h3>
+                    <p class="role">Founder & CEO</p>
+                    <p class="bio">With over 15 years in healthcare technology, Sarah leads our mission to revolutionize personal wellness tracking.</p>
+                </div>
+                <div class="team-card">
+                    <img src="assets/images/team2.jpg" alt="Michael Chen" loading="lazy">
+                    <h3>Michael Chen</h3>
+                    <p class="role">Head of Product</p>
+                    <p class="bio">Michael brings his expertise in UX design and product development to create intuitive wellness solutions.</p>
+                </div>
+                <div class="team-card">
+                    <img src="assets/images/team3.jpg" alt="Emily Rodriguez" loading="lazy">
+                    <h3>Emily Rodriguez</h3>
+                    <p class="role">Lead Developer</p>
+                    <p class="bio">Emily ensures our platform runs smoothly while implementing new features to enhance user experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -106,6 +145,6 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/animation.js"></script>
 </body>
 </html> 

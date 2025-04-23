@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CareSuite - Your Wellness Companion</title>
-    <link rel="stylesheet" href="css/modern.css">
+    <link rel="stylesheet" href="css/sofia-theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container navbar-container">
-            <div class="logo">CareSuite</div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active" title="Home page">Home</a></li>
-                <li><a href="about.html" title="Learn about CareSuite">About</a></li>
-                <li><a href="mood.html" title="Track your daily mood">Mood Tracker</a></li>
-                <li><a href="journal.html" title="Write in your personal journal">Journal</a></li>
-                <li><a href="fitness.html" title="Track your fitness activities">Fitness</a></li>
-                <li><a href="contact.html" title="Contact our team">Contact</a></li>
+        <div class="navbar-container">
+            <a href="/" class="navbar-brand">CareSuite</a>
+            <input type="checkbox" id="checkbox" title="Toggle navigation menu" aria-label="Toggle navigation menu">
+            <label for="checkbox" class="toggle" aria-hidden="true">
+                <div class="bars" id="bar1"></div>
+                <div class="bars" id="bar2"></div>
+                <div class="bars" id="bar3"></div>
+            </label>
+            <ul class="navbar-menu">
+                <li><a href="/" class="navbar-link">Home</a></li>
+                <li><a href="/about.html" class="navbar-link">About</a></li>
+                <li><a href="/mood.html" class="navbar-link">Mood</a></li>
+                <li><a href="/journal.html" class="navbar-link">Journal</a></li>
+                <li><a href="/fitness.html" class="navbar-link">Fitness</a></li>
+                <li><a href="/contact.html" class="navbar-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
@@ -70,6 +71,7 @@
     </section>
 
     <!-- Testimonial Section -->
+    <!--
     <section class="section testimonial-section">
         <div class="container">
             <div class="section-title">
@@ -110,9 +112,10 @@
             </div>
         </div>
     </section>
+    -->
 
     <!-- Call to Action Section -->
-    <section class="section" style="background: linear-gradient(135deg, var(--gray-100) 0%, var(--secondary-color) 100%);">
+    <section class="section" style="background: linear-gradient(135deg, var(--soft-beige) 0%, var(--mint) 100%);">
         <div class="container">
             <div class="section-title">
                 <h2>Ready to Start Your Wellness Journey?</h2>
@@ -137,6 +140,6 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/animation.js"></script>
 </body>
 </html> 

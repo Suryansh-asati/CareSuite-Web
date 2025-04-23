@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journal - CareSuite</title>
-    <link rel="stylesheet" href="css/modern.css">
+    <title>Personal Journal - CareSuite</title>
+    <link rel="stylesheet" href="css/sofia-theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -29,53 +29,52 @@
     </nav>
 
     <!-- Journal Section -->
-    <main class="journal-container">
+    <section class="section journal-section">
         <div class="container">
             <div class="section-title">
-                <h1>Personal Journal</h1>
+                <h2>Personal Journal</h2>
                 <p>Record your thoughts, feelings, and experiences</p>
             </div>
-
-            <div class="card">
-                <div class="card-body">
-                    <h2>New Entry</h2>
+            
+            <div class="journal-container">
+                <div class="journal-card">
+                    <h3>New Journal Entry</h3>
                     <form id="journal-form" onsubmit="handleJournalSubmit(event)">
                         <div class="form-group">
                             <label for="entry-title">Title</label>
-                            <input type="text" id="entry-title" name="entry-title" class="form-control" required>
+                            <input type="text" id="entry-title" class="form-control" placeholder="Give your entry a title" required>
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="entry-content">Content</label>
-                            <textarea id="entry-content" name="entry-content" class="form-control journal-textarea" required></textarea>
+                            <textarea id="entry-content" class="form-control journal-textarea" placeholder="Write your thoughts here..." required></textarea>
                         </div>
-
+                        
                         <div class="form-group">
-                            <label for="entry-mood">Mood</label>
-                            <select id="entry-mood" name="entry-mood" class="form-control" required>
+                            <label for="entry-mood">How are you feeling?</label>
+                            <select id="entry-mood" class="form-control">
                                 <option value="happy">Happy</option>
-                                <option value="sad">Sad</option>
-                                <option value="neutral">Neutral</option>
-                                <option value="excited">Excited</option>
+                                <option value="calm">Calm</option>
                                 <option value="anxious">Anxious</option>
+                                <option value="sad">Sad</option>
+                                <option value="excited">Excited</option>
                             </select>
                         </div>
-
+                        
                         <button type="submit" class="btn btn-primary" title="Save your journal entry">Save Entry</button>
                     </form>
                 </div>
-            </div>
-
-            <div class="card">
-                <div class="card-body">
-                    <h2>Previous Entries</h2>
-                    <div id="entries-list">
+                
+                <div class="journal-entries-card">
+                    <h3>Previous Entries</h3>
+                    <div id="entries-list" class="journal-entries">
                         <!-- Journal entries will be added here dynamically -->
+                        <p class="empty-state">No journal entries yet. Start writing today!</p>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -92,29 +91,6 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
-    <script>
-        function handleJournalSubmit(event) {
-            event.preventDefault();
-            
-            const title = document.getElementById('entry-title').value;
-            const content = document.getElementById('entry-content').value;
-            const mood = document.getElementById('entry-mood').value;
-
-            // Add to journal entries
-            const entriesList = document.getElementById('entries-list');
-            const entry = document.createElement('div');
-            entry.className = 'journal-entry';
-            entry.innerHTML = `
-                <h3>${title}</h3>
-                <p class="entry-date">${new Date().toLocaleDateString()} - Mood: ${mood}</p>
-                <p class="entry-text">${content}</p>
-            `;
-            entriesList.insertBefore(entry, entriesList.firstChild);
-
-            // Clear the form
-            event.target.reset();
-        }
-    </script>
+    <script src="js/animation.js"></script>
 </body>
 </html> 

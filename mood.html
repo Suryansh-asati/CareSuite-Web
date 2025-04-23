@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mood Tracker - CareSuite</title>
-    <link rel="stylesheet" href="css/modern.css">
+    <link rel="stylesheet" href="css/sofia-theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -29,56 +29,57 @@
     </nav>
 
     <!-- Mood Tracker Section -->
-    <main class="mood-container">
+    <section class="section mood-section">
         <div class="container">
             <div class="section-title">
-                <h1>Mood Tracker</h1>
+                <h2>Mood Tracker</h2>
                 <p>Track your daily mood and emotional well-being</p>
             </div>
-
-            <div class="card">
-                <div class="card-body">
-                    <h2>How are you feeling today?</h2>
+            
+            <div class="mood-tracker-container">
+                <div class="mood-card">
+                    <h3>How are you feeling today?</h3>
                     <div class="mood-options">
                         <div class="mood-option" data-mood="happy">
-                            <i class="fas fa-smile mood-emoji"></i>
-                            <span class="mood-label">Happy</span>
+                            <i class="fas fa-smile"></i>
+                            <span>Happy</span>
                         </div>
-                        <div class="mood-option" data-mood="sad">
-                            <i class="fas fa-frown mood-emoji"></i>
-                            <span class="mood-label">Sad</span>
-                        </div>
-                        <div class="mood-option" data-mood="neutral">
-                            <i class="fas fa-meh mood-emoji"></i>
-                            <span class="mood-label">Neutral</span>
-                        </div>
-                        <div class="mood-option" data-mood="excited">
-                            <i class="fas fa-laugh mood-emoji"></i>
-                            <span class="mood-label">Excited</span>
+                        <div class="mood-option" data-mood="calm">
+                            <i class="fas fa-meh"></i>
+                            <span>Calm</span>
                         </div>
                         <div class="mood-option" data-mood="anxious">
-                            <i class="fas fa-worried mood-emoji"></i>
-                            <span class="mood-label">Anxious</span>
+                            <i class="fas fa-frown"></i>
+                            <span>Anxious</span>
+                        </div>
+                        <div class="mood-option" data-mood="sad">
+                            <i class="fas fa-sad-tear"></i>
+                            <span>Sad</span>
+                        </div>
+                        <div class="mood-option" data-mood="excited">
+                            <i class="fas fa-laugh"></i>
+                            <span>Excited</span>
                         </div>
                     </div>
-
+                    
                     <div class="form-group">
                         <label for="mood-note">Add a note (optional)</label>
-                        <textarea id="mood-note" name="mood-note" class="form-control" placeholder="How are you feeling?"></textarea>
+                        <textarea id="mood-note" class="form-control" placeholder="What's on your mind today?"></textarea>
                     </div>
-
-                    <button type="button" class="btn btn-primary" onclick="saveMood()" title="Save your current mood">Save Mood</button>
+                    
+                    <button class="btn btn-primary" onclick="saveMood()" title="Save your mood">Save Mood</button>
                 </div>
-            </div>
-
-            <div class="mood-history">
-                <h2>Mood History</h2>
-                <div id="mood-list">
-                    <!-- Mood entries will be added here dynamically -->
+                
+                <div class="mood-history-card">
+                    <h3>Your Mood History</h3>
+                    <div id="mood-list" class="mood-list">
+                        <!-- Mood entries will be added here dynamically -->
+                        <p class="empty-state">No mood entries yet. Start tracking your mood today!</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -95,64 +96,6 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
-    <script>
-        let selectedMood = null;
-
-        // Add click event listeners to mood options
-        document.querySelectorAll('.mood-option').forEach(option => {
-            option.addEventListener('click', function() {
-                // Remove selected class from all options
-                document.querySelectorAll('.mood-option').forEach(opt => {
-                    opt.classList.remove('selected');
-                });
-                
-                // Add selected class to clicked option
-                this.classList.add('selected');
-                selectedMood = this.getAttribute('data-mood');
-            });
-        });
-
-        function saveMood() {
-            if (!selectedMood) {
-                alert('Please select a mood first');
-                return;
-            }
-
-            const note = document.getElementById('mood-note').value;
-            const moodList = document.getElementById('mood-list');
-            
-            const moodEntry = document.createElement('div');
-            moodEntry.className = 'mood-entry';
-            moodEntry.innerHTML = `
-                <div class="mood-entry-header">
-                    <i class="fas fa-${getMoodIcon(selectedMood)}"></i>
-                    <h3>${selectedMood.charAt(0).toUpperCase() + selectedMood.slice(1)}</h3>
-                    <span class="entry-date">${new Date().toLocaleDateString()}</span>
-                </div>
-                ${note ? `<p class="mood-note">${note}</p>` : ''}
-            `;
-            
-            moodList.insertBefore(moodEntry, moodList.firstChild);
-
-            // Reset form
-            document.querySelectorAll('.mood-option').forEach(opt => {
-                opt.classList.remove('selected');
-            });
-            selectedMood = null;
-            document.getElementById('mood-note').value = '';
-        }
-
-        function getMoodIcon(mood) {
-            const icons = {
-                'happy': 'smile',
-                'sad': 'frown',
-                'neutral': 'meh',
-                'excited': 'laugh',
-                'anxious': 'worried'
-            };
-            return icons[mood] || 'meh';
-        }
-    </script>
+    <script src="js/animation.js"></script>
 </body>
 </html> 
